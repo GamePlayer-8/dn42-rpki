@@ -28,11 +28,12 @@ jobs:
       - name: Setup WARP
         run: |
           sudo apt-get update
-          sudo apt-get install -y wireguard-tools curl
+          sudo apt-get install -y wireguard-tools curl sed
           curl -L https://github.com/ViRb3/wgcf/releases/download/v${{ env.WGCF_VERSION }}/wgcf_${{ env.WGCF_VERSION }}_linux_${{ env.WGCF_ARCH }} -o wgcf
           chmod +x wgcf
           ./wgcf register --accept-tos
           ./wgcf generate
+          sed -i 's|0.0.0.0/0, ||g' wgcf-profile.conf
           sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
           sudo wg-quick up wgcf
 
