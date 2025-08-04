@@ -37,7 +37,7 @@ steps:
       ipv6: true
       context: *context
       dockerfile: *file
-      platforms: linux/amd64,linux/arm64
+      platforms: linux/amd64
       repo: forgejo.xvm/gameplayer-8/${CI_REPO_NAME}
       registry: forgejo.xvm
       tags: latest
