@@ -21,6 +21,9 @@ jobs:
       packages: write
       contents: read
     steps:
+      - name: Setup WARP
+        uses: fscarmen/warp-on-actions@v1.0
+
       -
         name: Get remote package data
         run: |
@@ -98,6 +101,7 @@ jobs:
         if: env.exists == 'false'
         uses: docker/build-push-action@v6
         with:
+          ipv6: true
           context: ./src
           push: true
           provenance: false
