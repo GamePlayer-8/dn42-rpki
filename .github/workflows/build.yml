@@ -33,8 +33,8 @@ jobs:
           chmod +x wgcf
           ./wgcf register --accept-tos
           ./wgcf generate
-          cp wgcf-profile.conf /etc/wireguard/wgcf.conf
-          wg-quick up wgcf
+          sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+          sudo wg-quick up wgcf
 
       -
         name: Get remote package data
