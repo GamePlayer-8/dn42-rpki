@@ -109,6 +109,16 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      -
+        name: Patch Dockerfile
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sed
+          sed -i 's|git.chimmie.k.vu|github.com|g' src/Dockerfile
+          sed -i 's|/IP/|/Kioubit/|g' src/Dockerfile
+          sed -i 's|/mirri/|/Supervisor/|g' src/Dockerfile
+
       -
         name: Build Docker image
         if: env.exists == 'false'
