@@ -41,7 +41,7 @@ jobs:
         name: Get remote package data
         run: |
           #!/bin/bash
-          package="edge/community/x86_64/libvirt"
+          package="v3.22/main/x86_64/alpine-sdk"
           resp=$(curl -sS "https://pkgs.alpinelinux.org/package/$package")
           latest_tag=$(echo "$resp" | grep -A 3 -i \>version\< | sed -e 's/<[^>]*>//g' | sed -E 's#.*>([0-9\.]+)-r[0-9]+</a>#\1#g' | tail -1 | sed 's/^[ \t]*//;s/[ \t]*$//')
           [ -z "$latest_tag" ] && echo "Tag not found!" && exit 1
