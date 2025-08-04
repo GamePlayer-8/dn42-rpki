@@ -22,7 +22,7 @@ jobs:
       contents: read
     steps:
       - name: Setup WARP
-        uses: fscarmen/warp-on-actions@v1.0
+        uses: fscarmen/warp-on-actions@v1.3
 
       -
         name: Get remote package data
