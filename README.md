@@ -31,8 +31,8 @@ Under [Apache 2.0 License](./LICENSE.md) unless stated otherwise.
 ## Stars 🌟
 [![Stars](https://starchart.cc/GamePlayer-8/dn42-rpki.svg?variant=adaptive)](https://starchart.cc/GamePlayer-8/dn42-rpki)
 
-[xaviama_url]: https://ci.chimmie.k.vu/repos/20
-[codeberg_url]: https://ci.codeberg.org/repos/14900
+[xaviama_url]: https://ci.chimmie.k.vu/repos/23
+[codeberg_url]: https://ci.codeberg.org/repos/14987
 [build_url]: https://github.com/GamePlayer-8/dn42-rpki/
 [transrights_url]: https://en.wikipedia.org/wiki/Transgender_rights_movement
 [enbyware_url]: https://en.wikipedia.org/wiki/Non-binary
@@ -40,8 +40,8 @@ Under [Apache 2.0 License](./LICENSE.md) unless stated otherwise.
 [hub_url]: https://hub.docker.com/r/gameplayer8/dn42-rpki
 [tag_url]: https://hub.docker.com/r/gameplayer8/dn42-rpki/tags
 
-[XaviaMa]: https://ci.chimmie.k.vu/api/badges/20/status.svg
-[Codeberg]: https://ci.codeberg.org/api/badges/14900/status.svg
+[XaviaMa]: https://ci.chimmie.k.vu/api/badges/23/status.svg
+[Codeberg]: https://ci.codeberg.org/api/badges/14987/status.svg
 [Build]: https://github.com/GamePlayer-8/dn42-rpki/actions/workflows/build.yml/badge.svg
 [TransRights]: https://pride-badges.pony.workers.dev/static/v1?label=trans%20rights&stripeWidth=6&stripeColors=5BCEFA,F5A9B8,FFFFFF,F5A9B8,5BCEFA
 [Enbyware]: https://pride-badges.pony.workers.dev/static/v1?label=enbyware&labelColor=%23555&stripeWidth=8&stripeColors=FCF434%2CFFFFFF%2C9C59D1%2C2C2C2C
