@@ -21,16 +21,19 @@ RUN mkdir /workdir
 WORKDIR /workdir
 
 RUN apk add --no-cache \
-	alpine-sdk git rustup cargo curl coreutils
+	alpine-sdk git rust cargo curl coreutils
 
 RUN git clone \
 	--depth 1 --recursive \
 	https://git.chimmie.k.vu/IP/dn42_registry_wizard source
 
 WORKDIR /workdir/source
-RUN rustup-init -y
+#RUN rustup-init -y
 
-RUN . "/root/.cargo/env"; cargo build -p registry_wizard --release; \
+#RUN . "/root/.cargo/env"; cargo build -p registry_wizard --release; \
+#	cp target/x86_64-unknown-linux-musl/release/registry_wizard /usr/local/bin/
+
+RUN cargo build -p registry_wizard --release; \
 	cp target/x86_64-unknown-linux-musl/release/registry_wizard /usr/local/bin/
 
 FROM alpine:3.22 AS runtime
