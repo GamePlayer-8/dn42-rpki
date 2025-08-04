@@ -19,7 +19,6 @@ steps:
   dryrun:
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      insecure: true
       ipv6: true
       context: *context
       dockerfile: *file
