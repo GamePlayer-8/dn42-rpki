@@ -16,6 +16,7 @@
 </div></h1>
 
 This is an RTR Server stack for [DN42 network](https://dn42.eu/), which directly utilizes [dn42 git registry](https://git.dn42.dev/dn42/registry).
+The main component utilized is `registry_wizard` software, available at [Kioubit/dn42_registry_wizard](https://github.com/Kioubit/dn42_registry_wizard).
 
 GitHub Actions and Woodpecker servers are updating the image reguarly.
 
