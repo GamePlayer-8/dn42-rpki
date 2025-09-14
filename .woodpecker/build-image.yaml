@@ -24,7 +24,7 @@ steps:
       dockerfile: *file
       platforms: linux/amd64
       dry_run: true
-      repo: forgejo.xvm/gameplayer-8/${CI_REPO_NAME}
+      repo: ${CI_FORGE_URL#https://}/${CI_REPO_OWNER,,}/${CI_REPO_NAME,,}
       tags: latest
     # when:
     #   event: pull_request
@@ -33,17 +33,35 @@ steps:
   publish:
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      insecure: true
+      insecure: false
       ipv6: true
       context: *context
       dockerfile: *file
       platforms: linux/amd64
-      repo: forgejo.xvm/gameplayer-8/${CI_REPO_NAME}
-      registry: forgejo.xvm
+      repo: ${CI_FORGE_URL#https://}/${CI_REPO_OWNER,,}/${CI_REPO_NAME,,}
+      registry: ${CI_FORGE_URL#https://}
       tags: latest
-      username: gameplayer-8
+      username: ${CI_REPO_OWNER,,}
       password:
         from_secret: OCI_TOKEN
+    # when:
+    #   event: push
+    #   path: *file
+
+  publishCodeberg:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      insecure: false
+      ipv6: true
+      context: *context
+      dockerfile: *file
+      platforms: linux/amd64
+      repo: codeberg.org/${CI_REPO_OWNER,,}/${CI_REPO_NAME}
+      registry: codeberg.org
+      tags: latest
+      username: ${CI_REPO_OWNER,,}
+      password:
+        from_secret: OCI_CODEBERG_TOKEN
     # when:
     #   event: push
     #   path: *file
