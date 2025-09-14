@@ -25,8 +25,12 @@ REMOTE_DATA="${REMOTE_DATA:-https://git.chimmie.k.vu/IP/registry.git}"
 if ! [ -d /var/lib/registry/data ]; then
         cd /var/lib
         rm -rf registry 2>/dev/null
-        git clone --recursive "$REMOTE_DATA"
-        return $?
+	exit_code=1
+	until [ "$exit_code" = "0" ]; do
+	        git clone --recursive "$REMOTE_DATA"
+		exit_code=$?
+		sleep 1
+	done
 fi
 
 until [ "$(git -C /var/lib/registry status >/dev/null 2>&1; echo $?)" = "0" ]; do sleep 1; done
